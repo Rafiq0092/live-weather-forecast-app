@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ✅ Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Weather Forecast Web Application built using HTML, CSS, and JavaScript. Get real-time weather updates by city name or your current location." />
+
+    <!-- ✅ Title -->
+    <title>Weather Forecast App | Real-Time Weather Updates</title>
+
+    <!-- ✅ Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+    <!-- ✅ Favicon (Optional) -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1163/1163661.png" type="image/png">
+
+    <!-- ✅ CSS File -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- 🌤️ Weather App Container -->
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="app-header">
+            <h1>🌦️ Weather Forecast</h1>
+            <p class="tagline">Check real-time weather around the world</p>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Enter city name..."
+                    aria-label="Enter city name"
+                />
+                <button id="searchBtn">🔍 Search</button>
+            </div>
+            <p class="hint">Or allow location access to detect automatically</p>
+        </section>
+
+        <!-- Weather Display Card -->
+        <section class="weather-section">
+            <div class="weather-card" id="weatherCard">
+                <h2 id="cityName">Detecting your location...</h2>
+
+                <div class="weather-main">
+                    <img id="weatherIcon" src="" alt="Weather Icon" />
+                    <h3 id="temperature"></h3>
+                </div>
+
+                <p id="description" class="description"></p>
+
+                <div class="weather-details">
+                    <div class="detail">
+                        <span>💧 Humidity</span>
+                        <p><span id="humidity"></span>%</p>
+                    </div>
+                    <div class="detail">
+                        <span>🌬️ Wind</span>
+                        <p><span id="wind"></span> m/s</p>
+                    </div>
+                    <div class="detail">
+                        <span>🔥 Feels Like</span>
+                        <p><span id="feelsLike"></span>°C</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <p id="errorMessage" class="error-message"></p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ by Rafiq | Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a></p>
+        </footer>
+    </div>
+
+    <!-- ✅ JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

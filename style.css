@@ -1,0 +1,237 @@
+/* 🌤️ Modern Weather Forecast App Styling
+   Author: Rafiq
+   Description: Responsive, animated, glassmorphism weather UI
+*/
+
+/* ========== Global Reset ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== Body Layout ========== */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #74ABE2, #5563DE);
+    background-size: 300% 300%;
+    animation: bgShift 12s ease-in-out infinite;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Background Gradient Animation */
+@keyframes bgShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========== App Container ========== */
+.app-container {
+    width: 400px;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 30px 20px;
+    animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== Header Section ========== */
+.app-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.app-header .tagline {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* ========== Search Section ========== */
+.search-section {
+    margin: 20px 0;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.search-box input {
+    width: 70%;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-box button {
+    background: #007BFF;
+    border: none;
+    padding: 10px 18px;
+    color: #fff;
+    border-radius: 0 25px 25px 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.hint {
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
+/* ========== Weather Card ========== */
+.weather-card {
+    display: none;
+    animation: fadeIn 0.8s ease-in-out;
+    margin-top: 15px;
+}
+
+.weather-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.weather-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.weather-main img {
+    width: 110px;
+    height: 110px;
+    margin: 10px 0;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.weather-main h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.description {
+    text-transform: capitalize;
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+
+/* ========== Weather Details ========== */
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.detail {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 90px;
+    transition: 0.3s;
+}
+
+.detail:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-5px);
+}
+
+.detail span {
+    display: block;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.detail p {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* ========== Error Message ========== */
+.error-message {
+    color: #ff4c4c;
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+/* ========== Footer ========== */
+.footer {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    text-decoration: none;
+    color: #e0e0e0;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 480px) {
+    .app-container {
+        width: 95%;
+        padding: 25px 15px;
+    }
+
+    .app-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .weather-main h3 {
+        font-size: 1.8rem;
+    }
+
+    .weather-main img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .weather-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+}
